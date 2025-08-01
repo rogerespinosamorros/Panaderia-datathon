@@ -2,3 +2,4 @@ data/
 .env
 mlruns/
 mlartifacts/
+notebooks/catboost_info/
