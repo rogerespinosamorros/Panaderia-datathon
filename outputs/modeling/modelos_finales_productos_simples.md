@@ -1,7 +1,7 @@
 | Producto | Modelo elegido         | MAPE final |
 |----------|------------------------|------------|
-| 3880     | Ridge                  | 0.110      |
-| 3960     | LinearRegression       | 0.105      |
+| 3880     | Ridge                  | 0.152      |
+| 3960     | Ridge                  | 0.164      |
 | 6286     | Ridge                  | 0.205      |
 | 1084     | ExtraTreesRegressor    | 0.136      |
 | 968      | HistGradientBoosting   | 0.146      |
