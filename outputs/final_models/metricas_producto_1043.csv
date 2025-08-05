@@ -1,0 +1,2 @@
+producto,modelo,mae,rmse,r2,mae_rel,rmse_rel,mape
+1043,HistGradientBoosting,446.32,723.92,0.606,0.184,0.298,0.19
