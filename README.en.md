@@ -65,16 +65,18 @@ This project is the final capstone for the Master’s Degree in Data Science and
 
 ## 📂 Folder structure
 
+```
 ├── data/                 # Datasets (raw or processed)
 ├── mlartifacts/          # MLflow artifacts (models, metrics, etc.)
 ├── mlruns/               # MLflow experiment logs
 ├── model/                # Trained models and related scripts
 ├── notebooks/            # EDA and exploratory development
-├── outputs/              # Predictions and files for Power BI
-├── scripts/              # Main pipeline, data processing, and ML code
-├── .env                  # Environment variables (should not be pushed)
-├── .gitignore            # Git ignore rules
-├── Dockerfile            # Docker container to serve the model as an API
-├── requirements.txt      # Python dependencies
+├── outputs/              # Predictions and Power BI-ready results
+├── scripts/              # Main codebase (pipelines, preprocessing, ML logic)
+├── .env                  # Environment variables (not tracked by Git)
+├── .gitignore            # Files and folders excluded from version control
+├── Dockerfile            # Docker configuration to serve the model as API
+├── requirements.txt      # Python environment dependencies
 ├── README.es.md          # Spanish version of the documentation
 └── README.en.md          # English version of the documentation
+```
