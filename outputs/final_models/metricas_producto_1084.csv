@@ -1,0 +1,2 @@
+producto,modelo,mae,rmse,r2,mae_rel,rmse_rel,mape
+1084,ExtraTrees,457.96,665.67,0.023,0.122,0.177,0.136

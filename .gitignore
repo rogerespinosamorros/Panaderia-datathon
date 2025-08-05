@@ -3,3 +3,5 @@ data/
 mlruns/
 mlartifacts/
 notebooks/catboost_info/
+model/
+notebooks/modelo_pipeline.pkl

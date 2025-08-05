@@ -1,0 +1,2 @@
+producto,modelo,mae,rmse,r2,mae_rel,rmse_rel,mape
+3880,Ridge,335.22,438.35,0.498,0.15,0.196,0.152
