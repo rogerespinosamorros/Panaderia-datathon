@@ -65,16 +65,16 @@ Este proyecto forma parte del trabajo final del Máster en Data Science y Analí
 
 ## 📂 Estructura de carpetas
 
-├── data/                 # Conjuntos de datos utilizados (crudos o transformados)
-├── mlartifacts/          # Artefactos generados por MLflow (modelos, métricas, etc.)
-├── mlruns/               # Registros de experimentos de MLflow
-├── model/                # Modelos entrenados o scripts relacionados con el modelado
-├── notebooks/            # Análisis exploratorio y desarrollo inicial
-├── outputs/              # Predicciones y resultados listos para Power BI
-├── scripts/              # Código principal (pipelines, funciones, preparación de datos)
-├── .env                  # Variables de entorno (no subir a GitHub)
-├── .gitignore            # Archivos y carpetas ignorados por Git
-├── Dockerfile            # Configuración del contenedor para servir el modelo como API
-├── requirements.txt      # Dependencias del entorno Python
-├── README.es.md          # Documentación en español
-└── README.en.md          # Documentation in English
+├── data/ # Conjuntos de datos utilizados (crudos o transformados)
+├── mlartifacts/ # Artefactos generados por MLflow (modelos, métricas, etc.)
+├── mlruns/ # Registros de experimentos de MLflow
+├── model/ # Modelos entrenados o scripts relacionados con el modelado
+├── notebooks/ # Análisis exploratorio y desarrollo inicial
+├── outputs/ # Predicciones y resultados listos para Power BI
+├── scripts/ # Código principal (pipelines, funciones, preparación de datos)
+├── .env # Variables de entorno (no subir a GitHub)
+├── .gitignore # Archivos y carpetas ignorados por Git
+├── Dockerfile # Configuración del contenedor para servir el modelo como API
+├── requirements.txt # Dependencias del entorno Python
+├── README.es.md # Documentación en español
+└── README.en.md # Documentation in English
