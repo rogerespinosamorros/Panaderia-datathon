@@ -5,3 +5,5 @@ mlartifacts/
 notebooks/catboost_info/
 model/
 notebooks/modelo_pipeline.pkl
+__pycache__/
+mlflow.db
