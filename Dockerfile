@@ -1,20 +1,20 @@
-FROM python:3.10-slim
+FROM python:3.11-slim
 
-# Copia requirements.txt del modelo primero
-COPY model/requirements.txt requirements.txt
+# ARG para permitir definir la carpeta del modelo en tiempo de build
+ARG MODEL_DIR
 
-# Instala dependencias del modelo
-RUN pip install --no-cache-dir -r requirements.txt
+# Copiamos los archivos del modelo
+COPY model/${MODEL_DIR}/ /model/
 
-# Luego instala MLflow (asegúrate que la versión coincida con la del modelo si da problemas)
+# Instalamos dependencias
+RUN pip install --no-cache-dir -r /model/requirements.txt || true
+RUN pip install --no-cache-dir -r /model/python_env.yaml || true
 RUN pip install --no-cache-dir mlflow==3.1.1
 
-# Copia el modelo completo
+# Carpeta de trabajo
 WORKDIR /app
-COPY model/ model/
+COPY model/${MODEL_DIR}/ model/
 
-# Exponer puerto
 EXPOSE 5000
 
-# Servir el modelo
 CMD ["mlflow", "models", "serve", "-m", "model", "-h", "0.0.0.0", "-p", "5000", "--no-conda"]
