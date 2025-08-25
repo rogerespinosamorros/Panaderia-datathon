@@ -1,20 +1,27 @@
 FROM python:3.11-slim
 
-# ARG para permitir definir la carpeta del modelo en tiempo de build
-ARG MODEL_DIR
+# OpenMP para CatBoost/LightGBM
+RUN apt-get update && apt-get install -y --no-install-recommends libgomp1 && \
+    rm -rf /var/lib/apt/lists/*
 
-# Copiamos los archivos del modelo
-COPY model/${MODEL_DIR}/ /model/
-
-# Instalamos dependencias
-RUN pip install --no-cache-dir -r /model/requirements.txt || true
-RUN pip install --no-cache-dir -r /model/python_env.yaml || true
-RUN pip install --no-cache-dir mlflow==3.1.1
-
-# Carpeta de trabajo
 WORKDIR /app
-COPY model/${MODEL_DIR}/ model/
+ENV PYTHONUNBUFFERED=1 PIP_DISABLE_PIP_VERSION_CHECK=1
 
-EXPOSE 5000
+# Versiones que exige 
+RUN pip install --no-cache-dir \
+    mlflow==3.1.1 \
+    numpy==1.26.4 \
+    scipy==1.16.0 \
+    pandas==2.3.1 \
+    scikit-learn==1.7.0 \
+    catboost==1.2.8 \
+    xgboost==3.0.2 \
+    ipywidgets==8.1.7 \
+    pyarrow==20.0.0 \
+    psutil==7.0.0 \
+    defusedxml==0.7.1 \
+    graphviz==0.21 \
+    cffi==1.17.1
 
-CMD ["mlflow", "models", "serve", "-m", "model", "-h", "0.0.0.0", "-p", "5000", "--no-conda"]
+EXPOSE 8080
+CMD ["bash","-lc","exec mlflow models serve -m runs:/${RUN_ID}/${ARTIFACT_PATH} --host 0.0.0.0 --port 8080 --env-manager=local"]
