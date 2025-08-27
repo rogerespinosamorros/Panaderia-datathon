@@ -7,3 +7,5 @@ model/
 notebooks/modelo_pipeline.pkl
 __pycache__/
 mlflow.db
+environment.yml  
+notebooks/__skcache__/
